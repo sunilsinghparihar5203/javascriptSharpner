@@ -1,29 +1,35 @@
-"use strict"
-let getA = a =>a;
-console.log(getA(1))
-let square = (a) => {return a*a}
-console.log(square(2))
+let studnets = 0;
+class Student {
 
+  constructor(name, age, Marks) {
+    this.name = name;
+    this.age = age;
+    this.Marks = Marks;
+    studnets++
+  }
 
-let mult = (a,b)=> {return a*b}
+  checkEligibility = () => {
+    let that = this.Marks
+    let name = this.name
+    return that > 40 ? `${name} is eligible` : `${name} in not eligible`
+  }
 
-console.log(mult(4,5))
-
-
-var x = function(){
-  this.val = 1
-  setTimeout(() =>{
-    this.val++;
-    console.log(this.val)
-  },1)
-};
-
-var xx = new x()
-
-
-var y = (...n)=>{
-  console.log(n[0])
+  totalstudetns = function() {
+    return studnets
+  }
 }
 
-x(1,2,3);
 
+
+let s1 = new Student('sunil', 24, '99768717', 45)
+let s2 = new Student('pankaj', 34, '99923427137', 35)
+let s3 = new Student('rahul', 24, '993243297137', 78)
+let s4 = new Student('ram', 22, '9992347137', 56)
+let s5 = new Student('jeetu', 25, '7867137', 55)
+let s6 = new Student('jeetu', 25, '7867137', 55)
+
+console.log(s1.checkEligibility())
+console.log(s2.checkEligibility())
+console.log(s3.checkEligibility())
+console.log(s4.checkEligibility())
+console.log(s5.checkEligibility())
