@@ -1,67 +1,29 @@
-//this in global scop
+"use strict"
+let getA = a =>a;
+console.log(getA(1))
+let square = (a) => {return a*a}
+console.log(square(2))
 
-this.table = "window table"
+
+let mult = (a,b)=> {return a*b}
+
+console.log(mult(4,5))
 
 
+var x = function(){
+  this.val = 1
+  setTimeout(() =>{
+    this.val++;
+    console.log(this.val)
+  },1)
+};
 
-//this inside function
+var xx = new x()
 
-//This inside an inner function
 
-const cleanTable =function(soap){
-
- let that = this;
-
- const innerFunction = function(_soap){
-
-   console.log(`cleanning ${that.table} uisng ${soap} `)
-
- }
-
- innerFunction(soap)
-
+var y = (...n)=>{
+  console.log(n[0])
 }
 
+x(1,2,3);
 
-
-
-
-this.garage ={
-
- table: "garage table",
-
-  cleanTable(){
-
- console.log(`cleaning ${this.table}`)
-
- }
-
-}
-
-
-
-//this inside method
-
-let johnsRoom = {
-
- table : 'johns table',
-
- cleanTable(){
-
- console.log(`cleaning ${this.table}`)
-
- }
-
-}
-
-johnsRoom.cleanTable();
-
-this.garage.cleanTable()
-
-
-
-cleanTable.call(this,'some soap')
-
-cleanTable.call(this.garage,'some soap')
-
-cleanTable.call(johnsRoom,'some soap')
